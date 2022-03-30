@@ -1,10 +1,11 @@
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
+  dev: process.env.NODE_ENV !== 'production',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'msyu-explorer',
+    title: 'Msyu Explorer - File Explorer',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -65,6 +66,7 @@ export default {
   build: {
   },
   server: {
-    host: '0.0.0.0'
+    host: process.env.SERVER_IP,
+    port: process.env.SERVER_PORT
   }
 }
