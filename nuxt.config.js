@@ -30,7 +30,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
+    // '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss'
   ],
@@ -65,7 +65,7 @@ export default {
   build: {
   },
   server: {
-    host: process.env.SERVER_IP,
-    port: process.env.SERVER_PORT
+    host: process.env.SERVER_IP || '0.0.0.0',
+    port: process.env.SERVER_PORT || 9000
   }
 }

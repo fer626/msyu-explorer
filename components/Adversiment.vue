@@ -1,7 +1,9 @@
 <template>
   <div :class="showModal">
     <div class="aversiment-modal">
-      <div class="close-modal" @click="closeModal"> X </div>
+      <div class="close-modal" @click="closeModal">
+        X
+      </div>
       <div class="content">
         <h1>This app is under development</h1>
         <p>
@@ -9,9 +11,11 @@
           by using this project it is assumed that you are aware of its risks and possible flaws, please do not use anything personal in this!
         </p>
         <div class="modal-options">
-          <button class="btn" @click="acceptAdversiment">Accept</button>
+          <button class="btn" @click="acceptAdversiment">
+            Accept
+          </button>
           <div>
-            <input v-model="nevermind" type="checkbox" name="nevermind" ref="revermind" id="nevermind">
+            <input id="nevermind" ref="revermind" v-model="nevermind" type="checkbox" name="nevermind">
             <label for="nevermind">No volver a mostrar</label>
           </div>
         </div>
@@ -21,7 +25,6 @@
 </template>
 
 <script>
-import func from 'vue-editor-bridge'
 export default {
   name: 'Adver-siment',
   data: () => {
@@ -31,15 +34,17 @@ export default {
       nevermind: false
     }
   },
-  mounted () {
-    console.log('Adversiment status:', this.$store.getters.getAdversimentStatus)
-  },
   computed: {
     showModal () {
       return {
         'dev-adversiment': true,
-        show: !this.accept
+        show: !this.accept && this.$store.getters['general/adversimentStatus']
       }
+    }
+  },
+  watch: {
+    nevermind: function (nv) {
+      this.$store.commit('general/SET_ADVERSIMENT_STATUS', nv)
     }
   },
   methods: {
@@ -49,13 +54,7 @@ export default {
     closeModal () {
       this.close = true
     }
-  }//,
-  // watch: {
-  //   nevermind: function (nv) {
-  //     console.log('CAMBIO:', nv)
-  //     this.$store.commit('SET_ADVERSIMENT_STATUS', nv)
-  //   }
-  // }
+  }
 }
 </script>
 

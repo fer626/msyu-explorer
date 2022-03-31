@@ -14,7 +14,13 @@ export const state = () => ({
   adversiment: false
 })
 
-export const mutations = () => ({
+export const actions = {
+  async fetch ({ commit, state, rootState }, payload) {
+
+  }
+}
+
+export const mutations = {
   SET_NEW_APP (state, payload) {
     state.apps.push(payload)
   },
@@ -22,19 +28,13 @@ export const mutations = () => ({
     console.log('adversiment status:', payload)
     state.adversiment = payload
   }
-})
-
-export const actions = () => ({
-  async fetch ({ commit, state, rootState }, payload) {
-
-  }
-})
+}
 
 export const getters = {
-  getaApp (payload) {
-    return state.apps.find(a => a.name === payload)
+  apps (state) {
+    return state.apps
   },
-  getAdversimentStatus (payload) {
+  adversimentStatus (state) {
     return state.adversiment
   }
 }

@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Taskbar from './Taskbar.vue'
+import Taskbar from './taskbar/Taskbar.vue'
 import Adversiment from './Adversiment.vue'
 export default {
   name: 'DashBoard',
