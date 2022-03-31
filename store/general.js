@@ -10,12 +10,16 @@ export const state = () => ({
       version: '0.1',
       icon: ''
     }
-  ]
+  ],
+  adversiment: false
 })
 
 export const mutations = () => ({
   SET_NEW_APP (state, payload) {
     state.apps.push(payload)
+  },
+  SET_ADVERSIMENT_STATUS (state, payload) {
+    state.adversiment = payload
   }
 })
 
@@ -28,5 +32,8 @@ export const actions = () => ({
 export const getters = {
   getaApp (payload) {
     return state.apps.find(a => a.name === payload)
+  },
+  getAdversimentStatus (payload) {
+    return state.adversiment
   }
 }

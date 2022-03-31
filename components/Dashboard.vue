@@ -3,14 +3,16 @@
   <div>
     <p>Screen size: {{ screen.width }}x{{ screen.heigth }}</p>
     <Taskbar/>
+    <Adversiment/>
   </div>
 </template>
 
 <script>
 import Taskbar from './Taskbar.vue'
+import Adversiment from './Adversiment.vue'
 export default {
   name: 'DashBoard',
-  components: { Taskbar },
+  components: { Taskbar, Adversiment },
   data: () => ({
     data: 'hello world',
     screen: {
