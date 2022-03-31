@@ -19,6 +19,7 @@ export const mutations = () => ({
     state.apps.push(payload)
   },
   SET_ADVERSIMENT_STATUS (state, payload) {
+    console.log('adversiment status:', payload)
     state.adversiment = payload
   }
 })

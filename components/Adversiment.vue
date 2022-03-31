@@ -1,45 +1,61 @@
 <template>
   <div :class="showModal">
     <div class="aversiment-modal">
-      <div class="close-modal" @click="closeModal">X</div>
+      <div class="close-modal" @click="closeModal"> X </div>
       <div class="content">
         <h1>This app is under development</h1>
         <p>
-          There is a possibility that it has multiple failures or performance problems.<br/>
+          There is a possibility that it has multiple failures or performance problems.<br>
           by using this project it is assumed that you are aware of its risks and possible flaws, please do not use anything personal in this!
         </p>
-        <button class="btn" @click="acceptAdversiment">Accept</button>
+        <div class="modal-options">
+          <button class="btn" @click="acceptAdversiment">Accept</button>
+          <div>
+            <input v-model="nevermind" type="checkbox" name="nevermind" ref="revermind" id="nevermind">
+            <label for="nevermind">No volver a mostrar</label>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import func from 'vue-editor-bridge'
 export default {
   name: 'Adver-siment',
-  data: () => ({
-    close: false,
-    accept: false
-  }),
+  data: () => {
+    return {
+      close: false,
+      accept: false,
+      nevermind: false
+    }
+  },
   mounted () {
     console.log('Adversiment status:', this.$store.getters.getAdversimentStatus)
   },
   computed: {
-    showModal: () => (
-      {
+    showModal () {
+      return {
         'dev-adversiment': true,
-        show: !this.close && !this.accept
+        show: !this.accept
       }
-    )
+    }
   },
   methods: {
-    acceptAdversiment: () => {
+    acceptAdversiment () {
       this.accept = true
     },
-    closeModal: () => {
+    closeModal () {
       this.close = true
     }
-  }
+  }//,
+  // watch: {
+  //   nevermind: function (nv) {
+  //     console.log('CAMBIO:', nv)
+  //     this.$store.commit('SET_ADVERSIMENT_STATUS', nv)
+  //   }
+  // }
 }
 </script>
 
@@ -63,5 +79,11 @@ h1 {
 }
 .dev-adversiment.show {
   display: block;
+}
+.modal-options {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 </style>
