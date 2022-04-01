@@ -31,7 +31,6 @@ export default {
   border: 1px solid #ccc;
   font-size: .9rem;
   text-align: center;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,8 +44,6 @@ export default {
 }
 .tooltip {
   position: absolute;
-  /* width: 30vh; */
-  /* max-width: 60vh; */
   width: 60vh;
   bottom: calc(100% + 5px);
   display: none;
@@ -55,12 +52,6 @@ export default {
   color: white;
   border-radius: 5px;
   background: rgba(0,0,0,0.5);
-}
-.tooltip.left {
-  left: 0;
-}
-.tooltip.right {
-  right: 0;
 }
 .ico-app:hover .tooltip {
   display: flex;

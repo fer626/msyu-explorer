@@ -14,9 +14,6 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ],
-    script: [
-      { src: '~/assets/js/main.js', type: 'text/javascript' }
     ]
   },
 
@@ -25,7 +22,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/tooltip.js' }
+    { src: './plugins/tooltip.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
