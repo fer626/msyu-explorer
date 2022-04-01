@@ -1,6 +1,6 @@
 <!-- Please remove this file from your project -->
 <template>
-  <div>
+  <div class="desktop">
     <p>Screen size: {{ screen.width }}x{{ screen.heigth }}</p>
     <Taskbar/>
     <Adversiment/>
@@ -27,5 +27,11 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+.desktop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 </style>

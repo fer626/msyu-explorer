@@ -9,6 +9,46 @@ export const state = () => ({
       dateRegistered: new Date(),
       version: '0.1',
       icon: ''
+    },
+    {
+      name: 'Music',
+      slug: 'music',
+      url: './Music',
+      author: 'Neko Quincy',
+      dateAdd: new Date(),
+      dateRegistered: new Date(),
+      version: '0.1',
+      icon: ''
+    },
+    {
+      name: 'Device',
+      slug: 'device',
+      url: './Device',
+      author: 'Neko Quincy',
+      dateAdd: new Date(),
+      dateRegistered: new Date(),
+      version: '0.1',
+      icon: ''
+    },
+    {
+      name: 'Sync',
+      slug: 'sync',
+      url: './Sync',
+      author: 'Neko Quincy',
+      dateAdd: new Date(),
+      dateRegistered: new Date(),
+      version: '0.1',
+      icon: ''
+    },
+    {
+      name: 'More',
+      slug: 'more',
+      url: './more',
+      author: 'Neko Quincy',
+      dateAdd: new Date(),
+      dateRegistered: new Date(),
+      version: '0.1',
+      icon: ''
     }
   ],
   adversiment: false

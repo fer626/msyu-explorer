@@ -1,13 +1,11 @@
 <template>
   <div class="taskbar">
-    <div v-for="item in data" :key="item.slug">
-      <app-item :info="item"/>
-    </div>
+    <app-item v-for="item in data" :key="item.slug" :info="item"/>
   </div>
 </template>
 
 <script>
-import Appitem from './AppItem.vue';
+import Appitem from './apps/AppItem.vue';
 export default {
   name: 'TaskBar',
   component: {
@@ -15,7 +13,7 @@ export default {
   },
   async fetch() {
     this.data = this.$store.getters['general/apps']
-    console.log('data:', this.data)
+    console.log('data:', this.data.map(a => a.name))
   },
   data: () => ({
     data: null
@@ -29,5 +27,10 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
+  padding: .5rem;
+  display: flex;
+  justify-content: space-around;
+  background-color: aqua;
+  box-shadow: 0px 2px 50px 3px rgba(0,0,0,0.25);
 }
 </style>
