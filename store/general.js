@@ -2,6 +2,7 @@ export const state = () => ({
   apps: [
     {
       name: 'File explorer',
+      desc: 'You can browser into files',
       slug: 'file-explorer',
       url: './Fileexplorer',
       author: 'Neko Quincy',
@@ -12,6 +13,7 @@ export const state = () => ({
     },
     {
       name: 'Music',
+      desc: 'Can listen music from Youtube, spotify or Amazon Music',
       slug: 'music',
       url: './Music',
       author: 'Neko Quincy',
@@ -22,6 +24,7 @@ export const state = () => ({
     },
     {
       name: 'Device',
+      desc: 'You can see your device connected',
       slug: 'device',
       url: './Device',
       author: 'Neko Quincy',
@@ -32,6 +35,7 @@ export const state = () => ({
     },
     {
       name: 'Sync',
+      desc: 'You can sync your storage from one source',
       slug: 'sync',
       url: './Sync',
       author: 'Neko Quincy',
@@ -42,6 +46,7 @@ export const state = () => ({
     },
     {
       name: 'More',
+      desc: 'Show all installed apps',
       slug: 'more',
       url: './more',
       author: 'Neko Quincy',
