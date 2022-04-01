@@ -17,21 +17,14 @@ function isFullVisible (ele) {
   return ePos.left >= 0 && ePos.top >= 0 && window.innerHeight >= ePos.bottom && window.innerWidth >= ePos.right
 }
 function getVisiblePositionLoss (ele) {
-  let position, ePos = ele.getBoundingClientRect()
-  if (ePos.left <= 0 && ePos.top >= 0 && window.innerHeight >= ePos.bottom && window.innerWidth >= ePos.right ||
-        ePos.left >= 0 && ePos.top >= 0 && window.innerHeight >= ePos.bottom && window.innerWidth <= ePos.right) {
-    ele.style.left = ((window.innerWidth - ele.clientWidth) / 2) + 'px'
-    
-    console.log('screen width:', window.innerWidth)
-    console.log('element width:', ele.clientWidth)
-    console.log('total free space screen:', (window.innerWidth - ele.clientWidth))
-    console.log('left position calculated:', (window.innerWidth - ele.clientWidth) / 2)
-    console.log('correct horizontal', ele.getBoundingClientRect())
-  } else if (ePos.left >= 0 && ePos.top <= 0 && window.innerHeight >= ePos.bottom && window.innerWidth >= ePos.right ||
-        ePos.left >= 0 && ePos.top >= 0 && window.innerHeight <= ePos.bottom && window.innerWidth >= ePos.right) {
-    console.log('correct vertical', ele.getBoundingClientRect())
-    let taskbar = document.querySelector('.taskbar')
-    console.log('taskbar:', taskbar)
-    // position = 'top', 'bottom'
-  }
+  let taskbar = document.querySelector('.taskbar')
+  ele.style.left = ((window.innerWidth - ele.clientWidth) / 2) + 'px'
+  console.log('top calc:', (((window.innerHeight - taskbar.clientHeight) - 5) - ele.clientHeight) + 'px')
+  ele.style.top = (((window.innerHeight - taskbar.clientHeight) - 5) - ele.clientHeight) + 'px'
+
+  // console.log('bottom tootip:', taskbar.getBoundingClientRect().top + 5)
+  // console.log('position taskbar:', taskbar.getBoundingClientRect())
+  // console.log('Height taskbar:', taskbar.clientHeight)
+  // console.log('real window height:', (window.innerHeight - taskbar.clientHeight) - 5)
+  // console.log('real toast position:', ((window.innerHeight - taskbar.clientHeight) - 5) - ele.clientHeight)
 }

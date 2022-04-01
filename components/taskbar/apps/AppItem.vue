@@ -47,14 +47,17 @@ export default {
   width: 60vh;
   bottom: calc(100% + 5px);
   display: none;
+  opacity: 0;
   flex-direction: column;
   padding: .5rem;
   color: white;
   border-radius: 5px;
   background: rgba(0,0,0,0.5);
+  transform: opacity .3s ease-in;
 }
 .ico-app:hover .tooltip {
   display: flex;
+  opacity: 1;
 }
 .tooltip-title {
   font-size: 1.25rem;
