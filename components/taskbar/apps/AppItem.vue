@@ -29,6 +29,7 @@ export default {
   height: 65px;
   padding: .25rem;
   border: 1px solid #ccc;
+  font-size: .9rem;
   text-align: center;
   position: relative;
   display: flex;
