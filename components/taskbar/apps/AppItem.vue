@@ -44,7 +44,7 @@ export default {
 }
 .tooltip {
   position: absolute;
-  width: 60vh;
+  width: 70vw;
   bottom: calc(100% + 5px);
   display: none;
   opacity: 0;
@@ -65,7 +65,9 @@ export default {
 }
 
 @media (max-width: 575.98px) {
-  
+  .tooltip {
+
+  }
 }
 
 @media (max-width: 767.98px) {
