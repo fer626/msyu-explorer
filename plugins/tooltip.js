@@ -1,5 +1,7 @@
 (() => {
   window.addEventListener('load', (ele) => {
+    document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+    
     [...document.querySelectorAll('.ico-app')].forEach((v, k, arr) => {
       v.addEventListener('mouseenter', (ele) => {
         let tooltip = ele.target.querySelector('.tooltip')
