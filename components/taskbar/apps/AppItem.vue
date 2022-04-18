@@ -63,4 +63,23 @@ export default {
   font-size: 1.25rem;
   font-weight: bold;
 }
+
+@media (max-width: 575.98px) {
+  
+}
+
+@media (max-width: 767.98px) {
+  
+}
+
+@media (max-width: 991.98px) {
+  
+}
+@media (max-width: 1199.98px) {
+  
+}
+
+@media (max-width: 1399.98px) {
+  
+}
 </style>
